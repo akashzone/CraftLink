@@ -2,8 +2,19 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 const PORT = 3000;
+
+
+//middlewares
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//routes
+const authRoutes = require("./routes/authRoute");
 
 // function to connect MongoDB Atlas
 const connectDB = async () => {
@@ -16,8 +27,7 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
-
+app.use("/api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.json({
     message: "Request recieved !",
@@ -26,5 +36,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
+  connectDB();
   console.log(`Server is listening on PORT - ${PORT}`);
 });
