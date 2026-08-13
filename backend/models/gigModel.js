@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const gigSchema = new Schema(
@@ -30,6 +30,10 @@ const gigSchema = new Schema(
     stars: {
       type: Number,
       default: 0
+    },
+    shortTitle:{
+      type: String,
+      required: true
     },
     shortDesc:{
       type: String,
@@ -63,4 +67,4 @@ const gigSchema = new Schema(
 
 const Gig = mongoose.model("Gig", gigSchema);
 
-export default Gig;
+module.exports = Gig;
