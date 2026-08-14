@@ -1,5 +1,6 @@
 const User = require("../models/userModel");
-const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 const register = async (req, res) => {
   console.log("req.body :", req.body);
   try {
@@ -14,7 +15,7 @@ const register = async (req, res) => {
     const hash = bcrypt.hashSync(req.body.password, 5);
     const newUser = new User({
       ...req.body,
-      password: hash
+      password: hash,
     });
     await newUser.save();
     res.status(201).json({
@@ -32,7 +33,7 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const user = await User.findOne({
-      email : req.body.email
+      email: req.body.email,
     });
     if (!user) {
       res.status(404).json({
@@ -42,17 +43,29 @@ const login = async (req, res) => {
     }
 
     const isCorrect = bcrypt.compareSync(req.body.password, user.password);
-    if(!isCorrect) return res.status(400).json({
-      message : "Wrong password or email",
-      status: false
-    })
-
+    if (!isCorrect)
+      return res.status(400).json({
+        message: "Wrong password or email",
+        status: false,
+      });
+    const token = jwt.sign(
+      {
+        id: user._id,
+        isSeller: user.isSeller,
+      },
+      process.env.JWT_KEY,
+    );
     const { password, ...info } = user._doc;
-    res.status(200).json({
-      message: "Successfully account fetched",
-      info,
-      status: true,
-    });
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+      })
+      .status(200)
+      .json({
+        message: "Successfully account fetched",
+        info,
+        status: true,
+      });
   } catch (error) {
     res.status(500).json({
       message: error.message,
