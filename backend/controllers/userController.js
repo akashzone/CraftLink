@@ -1,32 +1,22 @@
 const User = require("../models/userModel");
+const createError = require("../utils/createError");
 
-const deleteUser = async (req, res) => {
+const deleteUser = async (req, res, next) => {
   try {
     const { id } = req.params;
     const userId = req.user.id;
-    console.log("UserId : ", userId)
     const user = await User.findById(id);
     if (!user) {
-      res.status(404).json({
-        message: "User not found",
-        status: false,
-      });
+      return next(createError(404, "User not found"))
     } 
-    console.log("ID from DB -", user._id);
-    if(userId !== user._id.toString()) return res.status(403).json({
-        message: "You can delete only your account",
-        status: false
-    })
+    if(userId !== user._id.toString()) return next(createError(403,"You can delete only your account"))
     await User.findByIdAndDelete(id)
     res.status(200).json({
       message: "User deleted",
       status: true
     });
   } catch (err) {
-    return res.status(400).json({
-      message: err.message,
-      status: false
-    });
+    return next(err);
   }
 };
 

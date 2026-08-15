@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+
 //routes
 const authRoutes = require("./routes/authRoute");
 const userRoutes = require("./routes/userRoute");
@@ -40,6 +41,16 @@ app.get("/", (req, res) => {
     message: "Request recieved !",
     status: true,
   });
+});
+
+
+app.use((err, req, res, next) => {
+    const errorStatus = err.status || 500;
+    const errorMessage = err.message || "Something went wrong.";
+
+    return res.status(errorStatus).json({
+        message: errorMessage
+    });
 });
 
 app.listen(PORT, () => {
