@@ -1,0 +1,53 @@
+.messages-page {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.messages-page-header {
+  margin-bottom: 32px;
+}
+
+.messages-page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.messages-page-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+/* Messages Table Container */
+.messages-table-container {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-lg);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.messages-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 750px;
+}
+
+.messages-table th {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.messages-empty-state {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+  font-size: 16px;
+}

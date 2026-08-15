@@ -1,0 +1,198 @@
+.add-gig-page {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.add-gig-page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.add-gig-form {
+  width: 100%;
+}
+
+.add-gig-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.form-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+}
+
+.input-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* File Upload Zone */
+.gig-upload-area {
+  width: 100%;
+}
+
+.gig-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--border-dark);
+  border-radius: var(--border-radius);
+  padding: 32px 24px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--bg-white);
+  transition: var(--transition);
+}
+
+.gig-upload-label:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-light);
+}
+
+.gig-upload-label .upload-icon {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.upload-main-txt {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.upload-sub-txt {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+/* Gallery Uploads */
+.gallery-uploads-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-upload-box {
+  width: 100%;
+}
+
+.gal-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--border-dark);
+  border-radius: var(--border-radius);
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  background-color: var(--bg-light);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.gal-upload-label:hover {
+  border-color: var(--text-main);
+  background-color: var(--bg-white);
+  color: var(--text-main);
+}
+
+.short-textarea {
+  min-height: 90px;
+}
+
+/* Features List UI */
+.add-feature-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.feature-item-input {
+  flex: 1;
+}
+
+.add-feature-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+.added-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.added-feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.remove-feature-btn {
+  color: #74767e;
+  transition: var(--transition);
+}
+
+.remove-feature-btn:hover {
+  color: #f74040;
+}
+
+.create-gig-submit-btn {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+/* Tablet & Mobile Grid stack */
+@media (max-width: 968px) {
+  .add-gig-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-card {
+    padding: 20px;
+  }
+  
+  .gallery-uploads-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

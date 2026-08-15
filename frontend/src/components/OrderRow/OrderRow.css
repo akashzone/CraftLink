@@ -1,0 +1,65 @@
+.order-row {
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.order-row:hover {
+  background-color: var(--bg-light);
+}
+
+.order-row td {
+  padding: 16px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.order-thumbnail {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+}
+
+.order-title-link {
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.order-title-link:hover {
+  color: var(--primary);
+}
+
+.order-price {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.order-buyer {
+  color: var(--text-secondary);
+}
+
+.order-delivery {
+  color: var(--text-secondary);
+}
+
+.order-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dark);
+  color: var(--text-secondary);
+  background-color: var(--bg-white);
+  transition: var(--transition);
+}
+
+.order-contact-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--bg-white);
+  box-shadow: var(--shadow-sm);
+}

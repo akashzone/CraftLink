@@ -36,7 +36,7 @@ const connectDB = async () => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", authMiddleware, userRoutes);
-app.get("/", (req, res) => {
+app.get("/api/test", (req, res) => {
   res.json({
     message: "Request recieved !",
     status: true,

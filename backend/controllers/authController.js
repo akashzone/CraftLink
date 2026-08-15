@@ -2,7 +2,7 @@
 const User = require("../models/userModel");
 
 const createError = require("../utils/createError");
-
+   //1:14
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
@@ -54,6 +54,7 @@ const login = async (req, res, next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
+        secure: true
       })
       .status(200)
       .json({
@@ -64,6 +65,18 @@ const login = async (req, res, next) => {
   } catch (error) {
     return next(error);
   }
+};
+
+const logout = (req, res) => {
+    res.clearCookie("accessToken", {
+        sameSite: "none",
+        secure: true
+    });
+
+    return res.status(200).json({
+        message: "Logged out successfully",
+        status: true
+    });
 };
 
 module.exports = { register, login };

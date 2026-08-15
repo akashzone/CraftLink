@@ -1,80 +1,63 @@
-import "./app.scss";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import React from "react";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
-import Home from "./pages/home/Home";
-import Gigs from "./pages/gigs/Gigs";
-import Gig from "./pages/gig/Gig";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
-import Add from "./pages/add/Add";
-import Orders from "./pages/orders/Orders";
-import Messages from "./pages/messages/Messages";
-import Message from "./pages/message/Message";
-import MyGigs from "./pages/myGigs/MyGigs";
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import './App.css';
+
+// Import Layout Components
+import Header from './components/Header/Header';
+import CategoryNavbar from './components/CategoryNavbar/CategoryNavbar';
+import Footer from './components/Footer/Footer';
+
+// Import Pages
+import Home from './pages/Home/Home';
+import Gigs from './pages/Gigs/Gigs';
+import GigDetails from './pages/GigDetails/GigDetails';
+import AddGig from './pages/AddGig/AddGig';
+import Orders from './pages/Orders/Orders';
+import Messages from './pages/Messages/Messages';
+import Message from './pages/Message/Message';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+
+// Scroll Restoration Utility
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
-  const Layout = () => {
-    return (
-      <div className="app">
-        <Navbar />
-        <Outlet />
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="app-container">
+        {/* Persistent Marketplace Header */}
+        <Header />
+        
+        {/* Persistent Category Navigation Menu */}
+        <CategoryNavbar />
+        
+        {/* Main Content Area */}
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/gigs" element={<Gigs />} />
+            <Route path="/gig/:id" element={<GigDetails />} />
+            <Route path="/add" element={<AddGig />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/message/:id" element={<Message />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </main>
+        
+        {/* Persistent Footer */}
         <Footer />
       </div>
-    );
-  };
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/gigs",
-          element: <Gigs />,
-        },
-        {
-          path: "/myGigs",
-          element: <MyGigs />,
-        },
-        {
-          path: "/orders",
-          element: <Orders />,
-        },
-        {
-          path: "/messages",
-          element: <Messages />,
-        },
-        {
-          path: "/message/:id",
-          element: <Message />,
-        },
-        {
-          path: "/add",
-          element: <Add />,
-        },
-        {
-          path: "/gig/:id",
-          element: <Gig />,
-        },
-      ],
-    },
-    {
-      path: "/register",
-      element: <Register />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+    </BrowserRouter>
+  );
 }
 
 export default App;

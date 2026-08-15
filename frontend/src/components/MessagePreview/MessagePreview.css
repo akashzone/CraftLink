@@ -1,0 +1,80 @@
+.message-preview-row {
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.message-preview-row:hover {
+  background-color: var(--bg-light);
+}
+
+.message-preview-row.unread {
+  background-color: #f4fbf7;
+  font-weight: 600;
+}
+
+.message-preview-row td {
+  padding: 16px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.message-sender-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.message-sender-name {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.message-text-link {
+  display: block;
+  color: var(--text-secondary);
+  max-width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message-preview-row:hover .message-text-link {
+  color: var(--primary);
+}
+
+.message-date-cell {
+  color: var(--text-muted);
+}
+
+.message-action-cell {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mark-read-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary);
+  transition: var(--transition);
+}
+
+.mark-read-btn:hover {
+  background-color: var(--primary);
+  color: var(--bg-white);
+}
+
+.read-status {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Mobile responsive card layouts inside tables can be styled by wrapping them */
+@media (max-width: 768px) {
+  .message-text-link {
+    max-width: 200px;
+  }
+}

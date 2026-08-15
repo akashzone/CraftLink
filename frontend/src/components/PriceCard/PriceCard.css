@@ -1,0 +1,120 @@
+.price-card {
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-white);
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.price-card-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 14px 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-secondary);
+  background-color: var(--bg-light);
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
+  text-align: center;
+}
+
+.tab-btn:hover {
+  background-color: var(--bg-white);
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  background-color: var(--bg-white);
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.price-card-body {
+  padding: 24px;
+}
+
+.price-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.package-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.package-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.package-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.package-specs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.feature-icon {
+  color: var(--primary);
+}
+
+.feature-item.excluded {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.feature-item.excluded .feature-icon {
+  color: var(--text-muted);
+}
+
+.continue-btn {
+  margin-bottom: 12px;
+}
+
+.contact-seller-btn {
+  height: 44px;
+  font-size: 14px;
+}

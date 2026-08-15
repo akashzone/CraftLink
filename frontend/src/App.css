@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page spacing and headers helper */
+.page-section {
+  padding: 48px 0;
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding: 32px 0;
+  }
+}

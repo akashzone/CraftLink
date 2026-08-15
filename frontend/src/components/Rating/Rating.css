@@ -1,0 +1,30 @@
+.rating-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.stars-wrapper {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star {
+  color: var(--border-dark);
+}
+
+.star.filled {
+  color: var(--star-gold);
+}
+
+.rating-val {
+  font-weight: 700;
+  color: var(--star-gold);
+  margin-left: 2px;
+}
+
+.rating-count {
+  color: var(--text-muted);
+}

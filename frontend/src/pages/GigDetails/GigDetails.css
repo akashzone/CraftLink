@@ -1,0 +1,306 @@
+.gig-details-page {
+  padding-bottom: 80px;
+}
+
+.gig-details-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  position: relative;
+  align-items: start;
+}
+
+.gig-details-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.gig-main-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-main);
+}
+
+/* Seller Top Summary */
+.gig-seller-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.seller-summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.seller-summary-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seller-summary-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.seller-summary-level {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Image Gallery Carousel */
+.gig-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.gallery-main-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--bg-light);
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-control-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.gallery-control-btn:hover {
+  background-color: var(--bg-white);
+  color: var(--primary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.gallery-control-btn.prev {
+  left: 16px;
+}
+
+.gallery-control-btn.next {
+  right: 16px;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.thumbnail-btn {
+  width: 100px;
+  aspect-ratio: 16/10;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.thumbnail-btn.active {
+  border-color: var(--primary);
+}
+
+.thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sections General Details */
+.details-section {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+}
+
+.details-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.gig-description-text p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.gig-description-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* About the Seller Section */
+.seller-details-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.seller-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.seller-details-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.seller-details-level {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.seller-details-rating {
+  margin-bottom: 6px;
+}
+
+.contact-btn {
+  align-self: flex-start;
+  height: 38px;
+  font-size: 14px;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.seller-stats-card {
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+}
+
+.seller-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.seller-languages-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.seller-description-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-top: 16px;
+}
+
+/* Reviews Summary */
+.reviews-summary-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.reviews-summary-count {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.gig-details-not-found {
+  text-align: center;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Responsiveness settings */
+@media (max-width: 968px) {
+  .gig-details-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .gig-details-sidebar {
+    grid-row: 2; /* Put checkout block above reviews and seller detailed card on mobile, or bottom */
+  }
+}
+
+@media (max-width: 600px) {
+  .gig-main-title {
+    font-size: 24px;
+  }
+  
+  .seller-details-profile {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .contact-btn {
+    align-self: center;
+  }
+  
+  .seller-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .gallery-control-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

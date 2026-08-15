@@ -1,98 +1,118 @@
-import React from "react";
-import "./Footer.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
-function Footer() {
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="footer">
-      <div className="container">
-        <div className="top">
-          <div className="item">
-            <h2>Categories</h2>
-            <span>Graphics & Design</span>
-            <span>Digital Marketing</span>
-            <span>Writing & Translation</span>
-            <span>Video & Animation</span>
-            <span>Music & Audio</span>
-            <span>Programming & Tech</span>
-            <span>Data</span>
-            <span>Business</span>
-            <span>Lifestyle</span>
-            <span>Photography</span>
-            <span>Sitemap</span>
+    <footer className="main-footer">
+      <div className="container footer-content">
+        {/* Footer Top Links */}
+        <div className="footer-links-grid">
+          <div className="footer-col">
+            <h4 className="footer-title">Categories</h4>
+            <ul>
+              <li><Link to="/gigs?cat=graphics-design">Graphics & Design</Link></li>
+              <li><Link to="/gigs?cat=digital-marketing">Digital Marketing</Link></li>
+              <li><Link to="/gigs?cat=writing-translation">Writing & Translation</Link></li>
+              <li><Link to="/gigs?cat=video-animation">Video & Animation</Link></li>
+              <li><Link to="/gigs?cat=music-audio">Music & Audio</Link></li>
+              <li><Link to="/gigs?cat=programming-tech">Programming & Tech</Link></li>
+            </ul>
           </div>
-          <div className="item">
-            <h2>About</h2>
-            <span>Press & News</span>
-            <span>Partnerships</span>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Intellectual Property Claims</span>
-            <span>Investor Relations</span>
-            <span>Contact Sales</span>
+          
+          <div className="footer-col">
+            <h4 className="footer-title">About</h4>
+            <ul>
+              <li><a href="#press">Press & News</a></li>
+              <li><a href="#partners">Partnerships</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Service</a></li>
+              <li><a href="#ip">Intellectual Property</a></li>
+            </ul>
           </div>
-          <div className="item">
-            <h2>Support</h2>
-            <span>Help & Support</span>
-            <span>Trust & Safety</span>
-            <span>Selling on CraftLink</span>
-            <span>Buying on CraftLink</span>
+
+          <div className="footer-col">
+            <h4 className="footer-title">Support</h4>
+            <ul>
+              <li><a href="#help">Help & Support</a></li>
+              <li><a href="#safety">Trust & Safety</a></li>
+              <li><a href="#selling">Selling on CraftLink</a></li>
+              <li><a href="#buying">Buying on CraftLink</a></li>
+            </ul>
           </div>
-          <div className="item">
-            <h2>Community</h2>
-            <span>Customer Success Stories</span>
-            <span>Community hub</span>
-            <span>Forum</span>
-            <span>Events</span>
-            <span>Blog</span>
-            <span>Influencers</span>
-            <span>Affiliates</span>
-            <span>Podcast</span>
-            <span>Invite a Friend</span>
-            <span>Become a Seller</span>
-            <span>Community Standards</span>
+
+          <div className="footer-col">
+            <h4 className="footer-title">Community</h4>
+            <ul>
+              <li><a href="#hub">Community Hub</a></li>
+              <li><a href="#forum">Forum</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
           </div>
-          <div className="item">
-            <h2>More From Fiverr</h2>
-            <span>CraftLink Business</span>
-            <span>CraftLink Pro</span>
-            <span>CraftLink Logo Maker</span>
-            <span>CraftLink Guides</span>
-            <span>Get Inspired</span>
-            <span>CraftLink Select</span>
-            <span>ClearVoice</span>
-            <span>CraftLink Workspace</span>
-            <span>Learn</span>
-            <span>Working Not Working</span>
+
+          <div className="footer-col">
+            <h4 className="footer-title">More From CraftLink</h4>
+            <ul>
+              <li><a href="#business">CraftLink Business</a></li>
+              <li><a href="#pro">CraftLink Pro</a></li>
+              <li><a href="#guides">CraftLink Guides</a></li>
+              <li><a href="#inspired">Get Inspired</a></li>
+            </ul>
           </div>
         </div>
-        <hr />
-        <div className="bottom">
-          <div className="left">
-            <h2>CraftLink</h2>
-            <span>© CraftLink International Ltd. 2023</span>
+
+        {/* Footer Bottom Bar */}
+        <div className="footer-bottom">
+          <div className="footer-left">
+            <span className="footer-logo">
+              CraftLink<span className="dot">.</span>
+            </span>
+            <span className="footer-copyright">
+              © CraftLink International Ltd. {currentYear}
+            </span>
           </div>
-          <div className="right">
-            <div className="social">
-              <img src="/img/twitter.png" alt="" />
-              <img src="/img/facebook.png" alt="" />
-              <img src="/img/linkedin.png" alt="" />
-              <img src="/img/pinterest.png" alt="" />
-              <img src="/img/instagram.png" alt="" />
+
+          <div className="footer-right">
+            <div className="footer-social-links">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" />
+                </svg>
+              </a>
             </div>
-            <div className="link">
-              <img src="/img/language.png" alt="" />
-              <span>English</span>
-            </div>
-            <div className="link">
-              <img src="/img/coin.png" alt="" />
-              <span>USD</span>
-            </div>
-            <img src="/img/accessibility.png" alt="" />
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
-}
+};
 
 export default Footer;
